@@ -48,7 +48,7 @@ python test.py
 [3 >= 2]: Decreasing
 [2 <= 4]: Increasing
 
-X [Not safe order] report_4: [1, 3, 2, 4, 5] >> status: Unsafe <<
+X [Not safe order] report_4: [1, 3, 2, 4, 5] >> status: Unsafe <<-->> role_value: 2 << 
 
 ```
 
