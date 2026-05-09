@@ -1,0 +1,203 @@
+Do you want to display all classifications logs? (Y/N) y
+Do you want to display all process logs? (Y/N) y
+
+ ---------------( -> Start classifying <- )--------------- 
+
+### 1) Starting with -> report_1: [7, 6, 4, 2, 1] 
+
+[7 >= 6]: Decreasing
+[6 >= 4]: Decreasing
+[4 >= 2]: Decreasing
+[2 >= 1]: Decreasing
+
+report_1: [7, 6, 4, 2, 1] >> status: Decreasing <<-->> role_value: -4 << 
+
+### 2) Starting with -> report_2: [1, 2, 7, 8, 9] 
+
+[1 <= 2]: Increasing
+[2 <= 7]: Increasing
+[7 <= 8]: Increasing
+[8 <= 9]: Increasing
+
+report_2: [1, 2, 7, 8, 9] >> status: Increasing <<-->> role_value: 4 << 
+
+### 3) Starting with -> report_3: [9, 7, 6, 2, 1] 
+
+[9 >= 7]: Decreasing
+[7 >= 6]: Decreasing
+[6 >= 2]: Decreasing
+[2 >= 1]: Decreasing
+
+report_3: [9, 7, 6, 2, 1] >> status: Decreasing <<-->> role_value: -4 << 
+
+### 4) Starting with -> report_4: [1, 3, 2, 4, 5] 
+
+[1 <= 3]: Increasing
+[3 >= 2]: Decreasing
+[2 <= 4]: Increasing
+[4 <= 5]: Increasing
+
+X [Not safe order] report_4: [1, 3, 2, 4, 5] >> status: Unsafe <<-->> role_value: 2 << 
+
+### 5) Starting with -> report_5: [8, 6, 4, 4, 1] 
+
+[8 >= 6]: Decreasing
+[6 >= 4]: Decreasing
+[4 >= 4]: Decreasing
+[4 >= 1]: Decreasing
+
+report_5: [8, 6, 4, 4, 1] >> status: Decreasing <<-->> role_value: -4 << 
+
+### 6) Starting with -> report_6: [1, 3, 6, 7, 9] 
+
+[1 <= 3]: Increasing
+[3 <= 6]: Increasing
+[6 <= 7]: Increasing
+[7 <= 9]: Increasing
+
+report_6: [1, 3, 6, 7, 9] >> status: Increasing <<-->> role_value: 4 << 
+
+
+ ------------------------------------------------------------ 
+
+### Classifications Reports Filtered Successfully >> 
+
+report_1_Decreasing_order : [7, 6, 4, 2, 1]
+report_2_Increasing_order : [1, 2, 7, 8, 9]
+report_3_Decreasing_order : [9, 7, 6, 2, 1]
+report_4_Unsafe_order : [1, 3, 2, 4, 5]
+report_5_Decreasing_order : [8, 6, 4, 4, 1]
+report_6_Increasing_order : [1, 3, 6, 7, 9]
+
+ ---------------( -> Start processing <- )--------------- 
+
+### 1) Starting with -> report_1_Decreasing_order: [7, 6, 4, 2, 1] 
+
+safe [7 - 6] = 1
+safe [6 - 4] = 2
+safe [4 - 2] = 2
+safe [2 - 1] = 1
+
+ report_result:  4 
+
+------------------------------------------------------------ 
+
+### 2) Starting with -> report_2_Increasing_order: [1, 2, 7, 8, 9] 
+
+safe [1 - 2] = 1
+-> not safe [2 - 7] = 5 --> out of 1 - 3 level range
+safe [7 - 8] = 1
+safe [8 - 9] = 1
+
+ report_result:  2 
+
+------------------------------------------------------------ 
+
+### 3) Starting with -> report_3_Decreasing_order: [9, 7, 6, 2, 1] 
+
+safe [9 - 7] = 2
+safe [7 - 6] = 1
+-> not safe [6 - 2] = 4 --> out of 1 - 3 level range
+safe [2 - 1] = 1
+
+ report_result:  2 
+
+------------------------------------------------------------ 
+
+### 4) Starting with -> report_4_Unsafe_order: [1, 3, 2, 4, 5] 
+
+safe [1 - 3] = 2
+safe [3 - 2] = 1
+safe [2 - 4] = 2
+safe [4 - 5] = 1
+
+ report_result:  4 
+
+------------------------------------------------------------ 
+
+### 5) Starting with -> report_5_Decreasing_order: [8, 6, 4, 4, 1] 
+
+safe [8 - 6] = 2
+safe [6 - 4] = 2
+-> not safe [4 - 4] = 0 --> out of 1 - 3 level range
+safe [4 - 1] = 3
+
+ report_result:  2 
+
+------------------------------------------------------------ 
+
+### 6) Starting with -> report_6_Increasing_order: [1, 3, 6, 7, 9] 
+
+safe [1 - 3] = 2
+safe [3 - 6] = 3
+safe [6 - 7] = 1
+safe [7 - 9] = 2
+
+ report_result:  4 
+
+------------------------------------------------------------ 
+
+### Processing Reports Completed Successfully >> 
+
+report_1_Decreasing_order_is_safe : [7, 6, 4, 2, 1]
+report_2_Increasing_order_is_not_safe : [1, 2, 7, 8, 9]
+report_3_Decreasing_order_is_not_safe : [9, 7, 6, 2, 1]
+report_4_Unsafe_order_is_not_safe : [1, 3, 2, 4, 5]
+report_5_Decreasing_order_is_not_safe : [8, 6, 4, 4, 1]
+report_6_Increasing_order_is_safe : [1, 3, 6, 7, 9]
+
+ ---------------( -> Report filtered successfully <- )--------------- 
+
+### Final Reports Displayed Successfully >> 
+
+7 6 4 2 1 : safe
+1 2 7 8 9 : Unsafe
+9 7 6 2 1 : Unsafe
+1 3 2 4 5 : Unsafe
+8 6 4 4 1 : Unsafe
+1 3 6 7 9 : safe
+
+ ---------------( -> Final Reports Results <- )--------------- 
+
+
+(without logs)
+
+
+
+Do you want to display all classifications logs? (Y/N) n
+Do you want to display all process logs? (Y/N) n
+
+ ---------------( -> Start classifying <- )--------------- 
+
+### Classifications Reports Filtered Successfully >> 
+
+report_1_Decreasing_order : [7, 6, 4, 2, 1]
+report_2_Increasing_order : [1, 2, 7, 8, 9]
+report_3_Decreasing_order : [9, 7, 6, 2, 1]
+report_4_Unsafe_order : [1, 3, 2, 4, 5]
+report_5_Decreasing_order : [8, 6, 4, 4, 1]
+report_6_Increasing_order : [1, 3, 6, 7, 9]
+
+ ---------------( -> Start processing <- )--------------- 
+
+### Processing Reports Completed Successfully >> 
+
+report_1_Decreasing_order_is_safe : [7, 6, 4, 2, 1]
+report_2_Increasing_order_is_not_safe : [1, 2, 7, 8, 9]
+report_3_Decreasing_order_is_not_safe : [9, 7, 6, 2, 1]
+report_4_Unsafe_order_is_not_safe : [1, 3, 2, 4, 5]
+report_5_Decreasing_order_is_not_safe : [8, 6, 4, 4, 1]
+report_6_Increasing_order_is_safe : [1, 3, 6, 7, 9]
+
+ ---------------( -> Report filtered successfully <- )--------------- 
+
+### Final Reports Displayed Successfully >> 
+
+7 6 4 2 1 : safe
+1 2 7 8 9 : Unsafe
+9 7 6 2 1 : Unsafe
+1 3 2 4 5 : Unsafe
+8 6 4 4 1 : Unsafe
+1 3 6 7 9 : safe
+
+ ---------------( -> Final Reports Results <- )--------------- 
