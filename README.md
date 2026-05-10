@@ -63,6 +63,6 @@ X [Not safe order] report_4: [1, 3, 2, 4, 5] >> status: Unsafe <<-->> role_value
 ---
 
 **Happy Coding!** 🚀
-*Part of the Advent of Code 2024 journey.*
+*Part of the Advent of Code 2026 journey.*
 
 ---
