@@ -10,7 +10,7 @@ To ensure accuracy, I implemented a **two-stage classification pipeline**. Inste
 
 1. **Stage 1: Trend Classification (`classify`)**
 * Determines if a report is strictly **Increasing** or **Decreasing**.
-* It uses a `role_value` system to track every step. If the trend breaks (e.g., increases then decreases), it's immediately flagged as `Unsafe`.
+* It uses a `role_value` system to track every step. If the trend breaks (e.g., increases then decreases), it's immediately flagged as `Unsafe_order`.
 
 
 2. **Stage 2: Delta Validation (`process`)**
